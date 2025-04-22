@@ -3,7 +3,7 @@
 <h1>Personal Portfolio Website - v0.1.0</h1>
 
 <h2>
-  <a href="https://shubhansu-kr.github.io/">shubhansu-kr.github.io</a>
+  <a href="https://adarshkadam635.github.io/">adarshkadam635.github.io</a>
 </h2>
 
 <!-- <div align="center">
@@ -42,7 +42,7 @@
 ✔️ Contact Me\
 ✔️ Footer
 
-To view a live example, **[click here](https://shubhansu-kr.github.io/)**
+To view a live example, **[click here](https://adarshkadam635.github.io/)**
 
 ## Tools Used 🛠️
 
