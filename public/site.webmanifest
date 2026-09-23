@@ -1,0 +1,29 @@
+{
+  "id": "/",
+  "name": "Adarsh Kadam — AI Engineer",
+  "short_name": "Adarsh Kadam",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "categories": ["portfolio", "technology", "education"],
+  "description": "AI Engineer portfolio covering Agentic AI, Generative AI, RAG, ML, deep learning, and automation.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/profile.png",
+      "sizes": "1000x1250",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
