@@ -88,7 +88,7 @@ SEO is configured centrally so there's a single source of truth for every crawle
 
 | Asset | Location | Purpose |
 |---|---|---|
-| Site constants | [`lib/site.ts`](lib/site.ts) | Base URL, title, description, keywords (override the URL with `NEXT_PUBLIC_SITE_URL`) |
+| Site constants | [`data/site.ts`](data/site.ts) | Base URL, title, description, keywords (override the URL with `NEXT_PUBLIC_SITE_URL`) |
 | Metadata | [`app/layout.tsx`](app/layout.tsx) | Title template, description, keywords, canonical, Open Graph, Twitter cards, robots directives, theme color |
 | Structured data | [`app/layout.tsx`](app/layout.tsx) | JSON-LD `@graph` with `Person`, `WebSite`, `ProfilePage` and an `ItemList` of projects |
 | Sitemap | [`app/sitemap.ts`](app/sitemap.ts) | Generates `/sitemap.xml` at build time |
