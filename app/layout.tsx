@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces } from 'next/font/google';
-import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/lib/site';
+import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/data/site';
 import { certifications, education, experiences, profile, projects, skills } from '@/data/portfolio';
 import './globals.css';
 
