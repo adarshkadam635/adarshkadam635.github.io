@@ -7,7 +7,7 @@ import { experiences, projects, skills } from '@/data/portfolio';
 const questions = [
   'What does Adarsh specialize in?',
   'What AI projects has he built?',
-  'Tell me about SentinelDrive.',
+  'Tell me about Plant Disease Classification.',
   'What is his RAG experience?'
 ];
 
@@ -19,8 +19,9 @@ function answerFor(question: string) {
   if (q.includes('project')) {
     return projects.map((p) => p.title).join(', ') + '.';
   }
-  if (q.includes('sentinel')) {
-    return 'SentinelDrive is a 2025 real-time driver drowsiness detection system combining CNN, LSTM, and GRU models, with multi-GPU training across 3× NVIDIA A6000 GPUs and a reported 2.8× throughput/scalability improvement.';
+  const matchingProject = projects.find((project) => q.includes(project.title.toLowerCase()));
+  if (matchingProject) {
+    return matchingProject.description;
   }
   if (q.includes('rag')) {
     return 'His RAG work includes production-ready LangChain + Pinecone pipelines, a privacy-policy/internal-knowledge assistant, knowledge-based AI solutions, and SmartRAG built with LlamaIndex, Pinecone, Claude API, and Python.';
@@ -31,7 +32,7 @@ function answerFor(question: string) {
   if (q.includes('experience')) {
     return `Adarsh's listed experience includes ${experiences.map((e) => `${e.role} at ${e.company}`).join('; ')}.`;
   }
-  return 'Ask about his specialties, projects, experience, technology stack, SentinelDrive, or RAG work.';
+  return 'Ask about his specialties, projects, experience, technology stack, plant disease classification, or RAG work.';
 }
 
 export default function PortfolioAssistant() {

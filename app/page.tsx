@@ -51,7 +51,7 @@ export default function Home() {
             <motion.span initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative z-10 -my-[6vw] block h-[34vw] w-[28vw] sm:-my-14 sm:h-52 sm:w-44 md:-my-16 md:h-64 md:w-56">
               <span className="absolute inset-0 -z-10 block scale-110 rounded-[6rem] bg-cyan-400/15 blur-3xl" />
               <span className="relative block h-full w-full overflow-hidden rounded-t-[6rem] rounded-b-2xl border border-white/10 shadow-[0_0_60px_rgba(103,232,249,.18)]">
-                <Image src="/profile.webp" alt="Adarsh Kadam, AI Engineer specializing in Agentic AI, Generative AI and RAG systems" fill sizes="(min-width: 768px) 224px, 28vw" className="object-cover object-top grayscale contrast-110 [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]" priority />
+                <Image src="/adarsh.png" alt="Adarsh Kadam, AI Engineer specializing in Agentic AI, Generative AI and RAG systems" fill sizes="(min-width: 768px) 224px, (min-width: 640px) 176px, 28vw" className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]" priority />
               </span>
             </motion.span>
             <motion.span initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="block select-none bg-gradient-to-r from-cyan-200 via-white to-indigo-300 bg-clip-text text-[16vw] font-extrabold uppercase leading-[0.85] tracking-tight text-transparent sm:text-[7.5rem] md:text-[9rem] lg:text-[10.5rem]">
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       <section className="relative border-y border-white/8 bg-white/[0.018]">
-        <div className="mx-auto grid max-w-7xl gap-px bg-white/8 px-0 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-px bg-white/8 px-0 sm:grid-cols-2">
           {stats.map((stat, i) => (
             <motion.div key={stat.label} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }} className="bg-slate-950 px-5 py-8 lg:px-8">
               <div className="font-mono text-3xl font-semibold tracking-tight text-white">{stat.value}</div>
@@ -170,11 +170,27 @@ export default function Home() {
                   <div className="flex items-center justify-between gap-4"><span className="rounded-full border border-cyan-300/15 bg-cyan-300/[0.04] px-3 py-1 text-[10px] font-mono uppercase tracking-[0.18em] text-cyan-100">{project.category}</span><span className="font-mono text-xs text-slate-600">{project.period}</span></div>
                   <h3 className="mt-8 text-3xl font-semibold tracking-tight text-white">{project.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-slate-400">{project.description}</p>
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} live site (opens in a new tab)`} className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-cyan-200 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">
+                      View live site <ExternalLink size={16} aria-hidden="true" />
+                    </a>
+                  )}
                   <div className="mt-7 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-white/8 bg-white/[0.02] px-3 py-1.5 font-mono text-[10px] text-slate-500">{tech}</span>)}</div>
                   {project.metrics.length > 0 && <div className="mt-8 grid gap-3 sm:grid-cols-2">{project.metrics.map((metric) => <div key={metric} className="rounded-xl border border-white/8 bg-white/[0.02] px-4 py-3 text-xs leading-5 text-slate-300">{metric}</div>)}</div>}
                   {project.note && <div className="mt-6 rounded-xl border border-amber-300/10 bg-amber-300/[0.02] px-4 py-3 text-xs leading-5 text-slate-500">{project.note}</div>}
                 </div>
                 <div className="p-6 md:p-8">
+                  {project.liveUrl && project.previewImage && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} from its website preview (opens in a new tab)`} className="mb-6 block overflow-hidden rounded-2xl border border-white/10 bg-slate-900 transition hover:border-cyan-200/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">
+                      <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-xs text-slate-300">
+                        <span>Website preview</span>
+                        <span className="inline-flex items-center gap-2 text-cyan-200">Open site <ArrowUpRight size={14} aria-hidden="true" /></span>
+                      </div>
+                      <div className="relative aspect-[16/10] overflow-hidden bg-white">
+                        <Image src={project.previewImage} alt={`${project.title} website homepage`} fill sizes="(min-width: 1280px) 640px, (min-width: 1024px) 55vw, 100vw" className="object-cover object-top" />
+                      </div>
+                    </a>
+                  )}
                   <ProjectVisual flow={project.flow} />
                   <div className="mt-6 grid gap-4 md:grid-cols-2">
                     <div>

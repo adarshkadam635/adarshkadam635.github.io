@@ -19,10 +19,6 @@ export const profile = {
 export const stats = [
   { value: '40%', label: 'Manual operational workload reduction' },
   { value: '94.5%', label: 'Plant disease classification accuracy' },
-  { value: '2.8×', label: 'Training throughput improvement' },
-  { value: '30%', label: 'Improvement in final output reliability' },
-  { value: '3×', label: 'NVIDIA A6000 GPUs used for SentinelDrive' },
-  { value: 'Sub-2 sec', label: 'Agent execution time' }
 ];
 
 export const capabilities = [
@@ -74,21 +70,6 @@ export const experiences = [
     tech: ['Python', 'LLMs', 'OpenAI', 'Gemini', 'Anthropic', 'RAG', 'NLP', 'Prompt Engineering', 'AI Agents', 'APIs', 'Git']
   },
   {
-    role: 'AI Engineer & Software Developer',
-    company: 'Indore Sunlight Pvt. Ltd.',
-    location: 'Indore',
-    period: 'January 2023 – January 2026',
-    bullets: [
-      'Developed and maintained the company website and CRM system.',
-      'Built a RAG-based AI system for querying privacy policies and internal knowledge.',
-      'Developed AI agents for WhatsApp, Email, and messaging automation.',
-      'Built AI Customer Support and Query Agents.',
-      'Developed an Employee Management System with real-time employee activity and monitoring.',
-      'Integrated AI, APIs, databases, and automation workflows to improve business processes.'
-    ],
-    tech: ['Python', 'JavaScript', 'React', 'APIs', 'SQL/NoSQL', 'RAG', 'LLMs', 'AI Agents', 'NLP', 'Git', 'Docker']
-  },
-  {
     role: 'AI Engineer — Agentic AI & Automation',
     company: 'Freelancer.com & Fiverr.com',
     location: 'Remote',
@@ -108,31 +89,9 @@ export const experiences = [
 
 export const projects = [
   {
-    id: 'research-agent',
-    title: 'Autonomous Business Research Agent',
-    category: 'Agentic AI',
-    period: '2025',
-    description:
-      'Production-level agentic AI system performing multi-step autonomous research and generating verified, structured business intelligence reports.',
-    tech: ['Python', 'LangChain', 'OpenAI API', 'Tavily Search API', 'FastAPI'],
-    features: ['Autonomous research', 'Multi-step reasoning', 'Tavily web search', 'Self-correction loops', 'Structured report generation', 'FastAPI backend'],
-    metrics: ['30% improvement in final output reliability', 'Sub-2-second real-time agent execution'],
-    flow: ['Research Request', 'Planning', 'Search', 'Knowledge Extraction', 'Verification', 'Self-Correction', 'Final Report']
-  },
-  {
-    id: 'sentineldrive',
-    title: 'SentinelDrive',
-    category: 'Computer Vision',
-    period: '2025',
-    description:
-      'A multi-modal deep learning system combining CNN, LSTM, and GRU networks for real-time driver drowsiness detection.',
-    tech: ['Python', 'PyTorch', 'TensorFlow', 'OpenCV', 'CNN', 'LSTM', 'GRU', 'Multi-GPU Training'],
-    features: ['Real-time detection', 'Facial landmark analysis', 'Multi-modal deep learning', 'Synthetic biometric signal processing', 'GPU-accelerated training'],
-    metrics: ['3× NVIDIA A6000 GPUs', '2.8× throughput/scalability improvement'],
-    flow: ['Camera Input', 'Landmarks', 'CNN Features', 'Temporal Model', 'Signal Fusion', 'Drowsiness Score']
-  },
-  {
     id: 'plant-disease',
+    liveUrl: 'https://plant-disease-classification-peach.vercel.app/',
+    previewImage: '/previews/plant-disease.jpg',
     title: 'Plant Disease Classification',
     category: 'Computer Vision',
     period: 'February 2025 – May 2025',
@@ -142,6 +101,21 @@ export const projects = [
     features: ['Deep learning classification', 'ResNet-9 architecture', 'Real-time inference', 'Gradio deployment'],
     metrics: ['94.5% diagnostic accuracy'],
     flow: ['Plant Image', 'Preprocessing', 'ResNet-9', 'Classification', 'Disease Diagnosis']
+  },
+  {
+    id: 'spo2-monitoring',
+    title: 'SpO₂ Monitoring System',
+    category: 'Healthcare / Signal Analysis',
+    period: 'Live project',
+    description:
+      'Pulse Health Observatory: an ECG research workspace for exploring recorded signals, running beat classification, and reviewing model performance.',
+    tech: ['ECG', 'MIT-BIH', 'Model Inference', 'Vercel'],
+    features: ['Recorded ECG replay', 'Beat classification', 'ECG image and JSON upload', 'Model evaluation', 'Session analysis history'],
+    metrics: [],
+    flow: ['ECG Recording or Upload', 'Signal Window', 'Model Inference', 'Beat Classification', 'Session Analysis'],
+    liveUrl: 'https://sp-o2-monitoring-system.vercel.app/',
+    previewImage: '/previews/spo2-monitoring.jpg',
+    note: 'Research workspace using recorded ECG data. Live SpO₂ readings require a connected sensor.'
   },
   {
     id: 'smartrag',
