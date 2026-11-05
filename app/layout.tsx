@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/data/site';
 import { certifications, education, experiences, profile, projects, skills } from '@/data/portfolio';
 import './globals.css';
 
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display', style: ['italic', 'normal'], weight: ['500', '600'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 const ogImageAlt = 'Adarsh Kadam — AI Engineer specializing in Agentic AI, Generative AI and RAG systems';
 
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#020617',
-  colorScheme: 'dark'
+  themeColor: '#09090f',
+  colorScheme: 'dark light'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         '@id': personId,
         name: profile.name,
         url: siteUrl,
-        image: `${siteUrl}/profile.png`,
+        image: `${siteUrl}/adarsh.png`,
         jobTitle: 'AI Engineer',
         description: profile.summary,
         email: profile.contact.email,
@@ -138,7 +138,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en" className={fraunces.variable}>
+    <html lang="en" className={inter.variable}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {children}
