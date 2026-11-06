@@ -124,14 +124,28 @@ export const projects = [
     category: 'Healthcare / Signal Analysis',
     period: 'Live project',
     description:
-      'Pulse Health Observatory: an ECG research workspace for exploring recorded signals, running beat classification, and reviewing model performance.',
-    tech: ['ECG', 'MIT-BIH', 'Model Inference', 'Vercel'],
+      'Pulse Health Observatory: a CNN + LSTM ECG research workspace for replaying recorded signals, classifying normal and abnormal beats, and reviewing model performance.',
+    tech: ['CNN + LSTM', 'MIT-BIH', 'ECG', 'Vercel'],
     features: ['Recorded ECG replay', 'Beat classification', 'ECG image and JSON upload', 'Model evaluation', 'Session analysis history'],
-    metrics: [],
+    metrics: ['85.5% balanced accuracy', '79.2% abnormal F1', '90.4% abnormal recall'],
+    evaluation: {
+      metrics: ['83.9% test accuracy', '70.4% precision', '0.916 ROC AUC'],
+      training: 'CNN + LSTM trained for 5 epochs. Reported training timestamp: 11/4/2026, 12:48:15 PM.',
+      methodology: 'Held-out recordings with patient-separated partitions. No windows shared across splits.',
+      splits: [
+        { name: 'Train', windows: '16,800', records: '100, 101, 103, 105, 108, 109, 117, 118, 119, 122, 123, 124, 200, 201, 202, 203, 209, 210, 213, 214, 215, 219, 220, 222, 230, 232, 233, 234' },
+        { name: 'Validation', windows: '4,200', records: '111, 113, 114, 115, 121, 205, 212' },
+        { name: 'Test', windows: '5,400', records: '106, 112, 116, 207, 208, 221, 223, 228, 231' }
+      ],
+      confusionMatrix: [
+        { actual: 'Normal', normal: 2874, abnormal: 695 },
+        { actual: 'Abnormal', normal: 175, abnormal: 1656 }
+      ]
+    },
     flow: ['ECG Recording or Upload', 'Signal Window', 'Model Inference', 'Beat Classification', 'Session Analysis'],
     liveUrl: 'https://sp-o2-monitoring-system.vercel.app/',
     previewImage: '/previews/spo2-monitoring.jpg',
-    note: 'Research workspace using recorded ECG data for signal replay, beat classification, and model evaluation.'
+    note: 'Research demonstration using recorded ECG data and selected beat symbols only. Not clinically validated. ECG cannot measure SpO₂.'
   }
 ];
 
