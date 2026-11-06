@@ -89,6 +89,31 @@ export const experiences = [
 
 export const projects = [
   {
+    id: 'neural-metrics',
+    title: 'Neural Metrics: Sentiment Analysis Lab',
+    category: 'NLP / Model Evaluation',
+    period: 'November 2026',
+    description:
+      'A reproducible NLP experiment comparing dense, CNN, and LSTM networks on negative, neutral, and positive English tweets. An interactive dashboard turns held-out evaluation into model comparisons, learning curves, and live browser-based sentiment predictions.',
+    tech: ['TensorFlow', 'Python', 'JavaScript', 'Vercel', 'scikit-learn', 'NumPy', 'Matplotlib'],
+    features: [
+      'CNN: 59.14% test accuracy and 0.5705 macro F1; Dense: 56.94% and 0.5683; LSTM: 58.66% and 0.5804.',
+      'TweetEval sentiment data: 45,582 cleaned training tweets, 2,000 validation tweets, and 12,284 held-out test tweets across three classes.',
+      'CNN improves test accuracy by 10.81 percentage points over the 48.33% majority-class baseline; LSTM achieves the highest test macro F1.',
+      'Dense is the default inference model because it leads on validation macro F1 (0.6477); test scores do not determine model selection.',
+      'Interactive accuracy/loss curves, row-normalized confusion matrices, test ROC curves, per-class reports, sentiment distributions, and CSV export.',
+      'Real dense-model inference runs entirely in the browser with learned weights and preprocessing; JavaScript outputs match TensorFlow reference predictions within 0.000002.',
+      'Immutable dataset revision and SHA-256 verification, train-only vocabulary, duplicate/overlap cleaning, early stopping, saved models, and automated pipeline tests.'
+    ],
+    metrics: ['59.14% CNN test accuracy', '0.5804 LSTM test macro F1', '12,284 held-out test tweets'],
+    flow: ['Pinned TweetEval Data', 'Split Cleaning', 'Train-only Tokenization', 'Dense / CNN / LSTM', 'Held-out Evaluation', 'Interactive Dashboard'],
+    liveUrl: 'https://neural-metrics-lab.vercel.app/',
+    sourceUrl: 'https://github.com/adarshkadam635/Evaluating_nueral_network_through_metrics_analysis',
+    previewImage: '/previews/neural-metrics.svg',
+    previewAlt: 'Neural Metrics evaluation summary: CNN 59.14%, LSTM 58.66%, and Dense 56.94% held-out test accuracy on TweetEval sentiment.',
+    note: 'CPU training run: 6 November 2026, seed 42, TensorFlow 2.20. Metrics reflect a single run on historical English tweets; sarcasm and domain shift remain limitations. Softmax scores are not calibrated confidence estimates.'
+  },
+  {
     id: 'enterpriseone',
     title: 'EnterpriseOne',
     category: 'Enterprise Software / ERP',
@@ -159,7 +184,7 @@ export const skills = {
 };
 
 export const skillContexts: Record<keyof typeof skills, string> = {
-  'Machine Learning & Deep Learning': 'Plant disease classification & ECG beat analysis',
+  'Machine Learning & Deep Learning': 'Sentiment evaluation, plant classification & ECG beat analysis',
   'Web & Backend Development': 'Inference APIs, interactive dashboards & this portfolio',
   'Data & Signal Processing': 'Recorded ECG signals, image preprocessing & evaluation',
   'Enterprise & Automation': 'EnterpriseOne ERP, QMS & PMS',
