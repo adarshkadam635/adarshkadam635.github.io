@@ -113,8 +113,8 @@ export const projects = [
     period: 'February 2025 – May 2025',
     description:
       'Custom ResNet-9 convolutional neural network for automated multi-class classification of agricultural plant diseases.',
-    tech: ['Python', 'PyTorch', 'ResNet-9', 'Gradio'],
-    features: ['Deep learning classification', 'ResNet-9 architecture', 'Real-time inference', 'Gradio deployment'],
+    tech: ['Python', 'PyTorch', 'FastAPI', 'ONNX Runtime'],
+    features: ['Deep learning classification', 'ResNet-9 architecture', 'ONNX Runtime inference', 'FastAPI deployment on Vercel'],
     metrics: ['94.5% diagnostic accuracy'],
     flow: ['Plant Image', 'Preprocessing', 'ResNet-9', 'Classification', 'Disease Diagnosis']
   },
@@ -125,7 +125,7 @@ export const projects = [
     period: 'Live project',
     description:
       'Pulse Health Observatory: a CNN + LSTM ECG research workspace for replaying recorded signals, classifying normal and abnormal beats, and reviewing model performance.',
-    tech: ['CNN + LSTM', 'MIT-BIH', 'ECG', 'Vercel'],
+    tech: ['TensorFlow', 'Flask', 'NumPy', 'CNN + LSTM'],
     features: ['Recorded ECG replay', 'Beat classification', 'ECG image and JSON upload', 'Model evaluation', 'Session analysis history'],
     metrics: ['85.5% balanced accuracy', '79.2% abnormal F1', '90.4% abnormal recall'],
     evaluation: {
@@ -150,12 +150,21 @@ export const projects = [
 ];
 
 export const skills = {
-  'AI / LLM / NLP': ['RAG', 'Agentic AI', 'Autonomous Agents', 'Large Language Models', 'Prompt Engineering', 'Tool Calling', 'Fine-Tuning', 'OpenAI API', 'Claude API', 'Hugging Face', 'LangChain'],
-  'Machine Learning & Deep Learning': ['PyTorch', 'TensorFlow', 'Scikit-learn', 'CNN', 'LSTM', 'GRU', 'ResNet', 'Transfer Learning', 'Data Augmentation', 'Multi-GPU Training', 'Model Optimization', 'Real-Time Inference'],
-  Programming: ['Python', 'C++', 'Java', 'SQL'],
-  'Backend & DevOps': ['FastAPI', 'REST APIs', 'Docker', 'AWS', 'Git', 'GitHub', 'GitHub Actions', 'Linux'],
-  'Vector Databases & Data': ['ChromaDB', 'Pinecone', 'Pandas', 'NumPy', 'Tavily Search API', 'Semantic Search'],
-  'Tools & Platforms': ['Jupyter Notebook', 'VS Code', 'Gradio', 'OpenCV']
+  'Machine Learning & Deep Learning': ['PyTorch', 'TensorFlow', 'Scikit-learn', 'ONNX Runtime', 'CNN', 'LSTM', 'ResNet-9', 'Computer Vision', 'Model Evaluation'],
+  'Web & Backend Development': ['Python', 'FastAPI', 'Flask', 'React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+  'Data & Signal Processing': ['NumPy', 'SciPy', 'Pandas', 'Matplotlib', 'ECG Signal Processing', 'MIT-BIH', 'Data Preprocessing', 'Confusion Matrices'],
+  'Enterprise & Automation': ['ERP Workflows', 'Quality Management (QMS)', 'PMS Workflows', 'Employee & Operator Portals', 'Business Automation', 'REST APIs', 'SQL'],
+  'AI / LLM / NLP': ['LangChain', 'OpenAI API', 'Claude API', 'Hugging Face', 'RAG', 'Agentic AI', 'Prompt Engineering', 'Tool Calling'],
+  'Deployment & Developer Tools': ['Vercel', 'Docker', 'Git', 'GitHub', 'GitHub Actions', 'Jupyter Notebook', 'VS Code']
+};
+
+export const skillContexts: Record<keyof typeof skills, string> = {
+  'Machine Learning & Deep Learning': 'Plant disease classification & ECG beat analysis',
+  'Web & Backend Development': 'Inference APIs, interactive dashboards & this portfolio',
+  'Data & Signal Processing': 'Recorded ECG signals, image preprocessing & evaluation',
+  'Enterprise & Automation': 'EnterpriseOne ERP, QMS & PMS',
+  'AI / LLM / NLP': 'AI engineering & freelance automation experience',
+  'Deployment & Developer Tools': 'Taking projects from experiments to live applications'
 };
 
 export const certifications = [
