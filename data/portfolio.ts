@@ -89,6 +89,22 @@ export const experiences = [
 
 export const projects = [
   {
+    id: 'enterpriseone',
+    title: 'EnterpriseOne',
+    category: 'Enterprise Software / ERP',
+    period: 'Live project',
+    description:
+      'An integrated Enterprise Resource Planning platform bringing ERP, QMS, and PMS together for connected business operations.',
+    tech: ['ERP', 'QMS', 'PMS', 'Vercel'],
+    features: ['Integrated ERP, QMS, and PMS workspace', 'Employee sign-in', 'Dedicated shop-floor operator login'],
+    metrics: [],
+    flow: ['Employee or Operator', 'Sign In', 'ERP / QMS / PMS Workspace', 'Connected Operations'],
+    liveUrl: 'https://enterpriseone-erp-qms-pms.vercel.app/',
+    previewImage: '/previews/enterpriseone.svg',
+    previewAlt: 'EnterpriseOne branding: Enterprise Resource Planning + QMS + PMS',
+    note: 'Sign-in required. Use an authorized employee or shop-floor operator account to access the workspace.'
+  },
+  {
     id: 'plant-disease',
     liveUrl: 'https://plant-disease-classification-peach.vercel.app/',
     previewImage: '/previews/plant-disease.jpg',
