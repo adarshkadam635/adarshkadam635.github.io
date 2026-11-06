@@ -119,8 +119,8 @@ export const projects = [
     flow: ['Plant Image', 'Preprocessing', 'ResNet-9', 'Classification', 'Disease Diagnosis']
   },
   {
-    id: 'spo2-monitoring',
-    title: 'SpO₂ Monitoring System',
+    id: 'ecg-monitoring',
+    title: 'ECG Monitoring System',
     category: 'Healthcare / Signal Analysis',
     period: 'Live project',
     description:
@@ -131,20 +131,7 @@ export const projects = [
     flow: ['ECG Recording or Upload', 'Signal Window', 'Model Inference', 'Beat Classification', 'Session Analysis'],
     liveUrl: 'https://sp-o2-monitoring-system.vercel.app/',
     previewImage: '/previews/spo2-monitoring.jpg',
-    note: 'Research workspace using recorded ECG data. Live SpO₂ readings require a connected sensor.'
-  },
-  {
-    id: 'smartrag',
-    title: 'SmartRAG',
-    category: 'RAG / Healthcare',
-    period: '2024',
-    description:
-      'Retrieval-Augmented Generation pipeline designed to analyze medical signals and clinical documentation for predictive cardiovascular insights.',
-    tech: ['LlamaIndex', 'Pinecone', 'Claude API', 'Python'],
-    features: ['Medical-signal processing', 'Clinical document retrieval', 'Low-latency semantic retrieval', 'Vector database integration'],
-    metrics: [],
-    flow: ['Medical Signals + Documents', 'Processing', 'Embeddings', 'Pinecone', 'Semantic Retrieval', 'Claude API', 'AI Insights'],
-    note: 'Technical project only — not a medical diagnostic service.'
+    note: 'Research workspace using recorded ECG data for signal replay, beat classification, and model evaluation.'
   }
 ];
 

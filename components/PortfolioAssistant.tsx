@@ -24,7 +24,7 @@ function answerFor(question: string) {
     return matchingProject.description;
   }
   if (q.includes('rag')) {
-    return 'His RAG work includes production-ready LangChain + Pinecone pipelines, a privacy-policy/internal-knowledge assistant, knowledge-based AI solutions, and SmartRAG built with LlamaIndex, Pinecone, Claude API, and Python.';
+    return 'His RAG work includes production-ready LangChain + Pinecone pipelines, a privacy-policy/internal-knowledge assistant, and knowledge-based AI solutions.';
   }
   if (q.includes('technology') || q.includes('stack')) {
     return `Key technologies include ${skills['AI / LLM / NLP'].slice(0, 6).join(', ')}, plus PyTorch, TensorFlow, FastAPI, Docker, AWS, Pinecone, ChromaDB, Pandas, NumPy, and OpenCV.`;
