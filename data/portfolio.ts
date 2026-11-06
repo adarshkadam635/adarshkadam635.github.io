@@ -119,14 +119,23 @@ export const projects = [
     category: 'Enterprise Software / ERP',
     period: 'Live project',
     description:
-      'An integrated Enterprise Resource Planning platform bringing ERP, QMS, and PMS together for connected business operations.',
-    tech: ['ERP', 'QMS', 'PMS', 'Vercel'],
-    features: ['Integrated ERP, QMS, and PMS workspace', 'Employee sign-in', 'Dedicated shop-floor operator login'],
+      'A manufacturing operations platform built with Django and PostgreSQL, connecting production tracking, quality inspections, inventory, maintenance, and dispatch in one workspace. Role-based employee and shop-floor portals enforce process sequences, quality gates, and approval workflows, with server-side validation and an audit trail for critical changes.',
+    tech: ['Python', 'Django', 'PostgreSQL', 'HTMX', 'Django REST Framework', 'JavaScript', 'Chart.js', 'HTML / CSS', 'Neon', 'Vercel Blob', 'Vercel'],
+    features: [
+      'Role-based workspaces for administrators, process teams, quality staff, maintenance teams, and shop-floor operators.',
+      'Production-order traceability from bending, pressing, welding, and painting through inspection, packing, and dispatch.',
+      'Server-side production-count validation, routing rules, quality gates, and approval chains before dispatch release.',
+      'Quality inspections, non-conformance reports, rework and rejection handling, and corrective-action workflows.',
+      'Inventory and finished-goods tracking, preventive and breakdown maintenance, document revision control, and operational reporting.',
+      'Responsive Django-template interface with HTMX interactions, Chart.js dashboards, QR scanning, and barcode/QR packing labels.',
+      'Django REST Framework APIs; deployed on Vercel with Neon PostgreSQL and private Vercel Blob file storage.'
+    ],
     metrics: [],
-    flow: ['Employee or Operator', 'Sign In', 'ERP / QMS / PMS Workspace', 'Connected Operations'],
+    flow: ['Role-based Sign-in', 'Production Order', 'Process Execution', 'Quality Inspection', 'PDI Approval', 'Packing & Dispatch'],
     liveUrl: 'https://enterpriseone-erp-qms-pms.vercel.app/',
     previewImage: '/previews/enterpriseone.svg',
-    previewAlt: 'EnterpriseOne branding: Enterprise Resource Planning + QMS + PMS',
+    previewAlt: 'EnterpriseOne manufacturing operations platform integrating production, quality management, and dispatch workflows',
+    sourceUrl: 'https://github.com/adarshkadam635/Belrise-Smart-Flow-System',
     note: 'Sign-in required. Use an authorized employee or shop-floor operator account to access the workspace.'
   },
   {
