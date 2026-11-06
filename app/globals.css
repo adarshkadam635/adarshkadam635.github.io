@@ -33,4 +33,17 @@ body{font-family:var(--font-sans),Arial,Helvetica,sans-serif}.site-header{positi
 @media(max-width:800px){.project-content>p{min-height:110px}.stat span{font-size:9px}.hero-socials>span:last-child{font-size:9px}.hero-role{font-size:11px}}
 @media(max-width:560px){.hero h1,[data-theme=minimal] .hero h1,[data-theme=terminal] .hero h1{font-size:clamp(38px,11vw,48px)}.hero-role{font-size:10px}.project-content>p{min-height:0}.hero-description,.about-copy>p{font-size:13px}.stat span{font-size:9px}.skill-card .tag{font-size:10px}.theme-card>p{font-size:10px}.theme-note{font-size:10px}.hero-socials>span:last-child{font-size:9px}.assistant-input input{font-size:12px}}
 .project-metrics{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:14px 0 0;padding:0}.project-metrics li{font-size:12px;font-weight:600;color:var(--accent);padding:7px 9px;background:var(--surface-raised);border:1px solid var(--line);border-radius:6px}.project-evaluation{margin-top:18px;overflow-wrap:anywhere}.project-evaluation h4{font-size:12px;color:var(--text);margin:16px 0 8px}.project-table-wrap{max-width:100%;overflow-x:auto;margin-top:16px}.project-table-wrap table{width:100%;border-collapse:collapse;font-size:11px}.project-table-wrap caption{text-align:left;font-weight:600;margin-bottom:8px}.project-table-wrap th,.project-table-wrap td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}.project-table-wrap thead th{vertical-align:bottom}
-.skill-card{min-width:0}.skill-card h3{margin-bottom:8px}.skill-context{color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:20px;min-height:41px}.skill-badges{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}.skill-badge{display:flex;align-items:center;gap:8px;max-width:100%;min-height:40px;padding:5px 10px 5px 5px;border:1px solid var(--line);border-radius:8px;background:var(--surface-raised);color:var(--text);font-size:12px;line-height:1.45}.skill-badge>span:last-child{min-width:0;overflow-wrap:anywhere}.skill-badge-icon{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:6px;color:var(--accent)}.skill-brand-icon{background:#fff;border:1px solid #e5e7eb}.skill-brand-icon img{display:block;width:20px;height:20px;object-fit:contain}@media(max-width:560px){.skill-grid{grid-template-columns:1fr}.skill-card{padding:24px}.skill-card h3{font-size:16px}.skill-context{min-height:0}.skill-badge{font-size:12px}.skill-card>svg{margin-bottom:16px}}
+/* Compact skills typography with proportional technology logos. */
+#skills .section-heading h2{font-size:clamp(26px,3vw,32px)}
+#skills .section-heading>p{font-size:13px}
+.skill-card{min-width:0;padding:22px}
+.skill-card h3{font-size:13px;line-height:1.5;margin-bottom:7px}
+.skill-context{color:var(--muted);font-size:11px;line-height:1.65;margin-bottom:16px;min-height:36px}
+.skill-badges{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0}
+.skill-badge{display:flex;align-items:center;gap:6px;max-width:100%;min-height:34px;padding:4px 8px 4px 4px;border:1px solid var(--line);border-radius:7px;background:var(--surface-raised);color:var(--text);font-size:11px;line-height:1.45}
+.skill-badge>span:last-child{min-width:0;overflow-wrap:anywhere}
+.skill-badge-icon{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;border-radius:5px;color:var(--accent)}
+.skill-badge-icon svg{width:17px;height:17px}
+.skill-brand-icon{background:#fff;border:1px solid #e5e7eb}
+.skill-brand-icon img{display:block;width:17px;height:17px;object-fit:contain}
+@media(max-width:560px){.skill-grid{grid-template-columns:1fr}.skill-card{padding:20px}.skill-card h3{font-size:13px}.skill-context{min-height:0}.skill-badge{font-size:11px}.skill-card>svg{margin-bottom:14px}}
