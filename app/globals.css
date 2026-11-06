@@ -47,3 +47,12 @@ body{font-family:var(--font-sans),Arial,Helvetica,sans-serif}.site-header{positi
 .skill-brand-icon{background:#fff;border:1px solid #e5e7eb}
 .skill-brand-icon img{display:block;width:17px;height:17px;object-fit:contain}
 @media(max-width:560px){.skill-grid{grid-template-columns:1fr}.skill-card{padding:20px}.skill-card h3{font-size:13px}.skill-context{min-height:0}.skill-badge{font-size:11px}.skill-card>svg{margin-bottom:14px}}
+
+/* Keep project tiles equal in size while allowing all content and details to expand. */
+.project-grid{grid-auto-rows:1fr;align-items:stretch}
+.project-grid>.project-card,.project-grid>.project-card:last-child:nth-child(odd){display:flex;flex-direction:column;align-self:stretch;grid-column:auto;height:100%;min-width:0}
+.project-grid>.project-card .project-image,.project-grid>.project-card:last-child:nth-child(odd) .project-image{height:220px;min-height:220px;flex:0 0 220px;border-right:0;border-bottom:1px solid var(--line)}
+.project-card>.project-content{display:flex;flex-direction:column;flex:1;min-width:0}
+.project-card .project-content>.tag-row{margin-top:auto;padding-top:19px;min-height:84px;align-content:flex-start}
+.project-card .project-footer{margin-top:16px}
+@media(max-width:560px){.project-card .project-content>.tag-row{min-height:0}.project-grid{grid-auto-rows:auto}}
