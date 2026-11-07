@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { motion, MotionConfig } from 'framer-motion';
 import { Activity, ArrowDown, ArrowRight, ArrowUpRight, Bot, BrainCircuit, BriefcaseBusiness, Check, CheckCheck, ChevronDown, Code2, Copy, Database, Download, ExternalLink, Github, GraduationCap, HeartPulse, Layers3, Leaf, Linkedin, Mail, Menu, Moon, Mountain, Palette, Send, Sparkles, Sun, Terminal, X } from 'lucide-react';
 import SkillBadge from '@/components/SkillBadge';
 import { capabilities, certifications, education, experiences, profile, projects, skills, skillContexts } from '@/data/portfolio';
@@ -18,8 +17,8 @@ type Theme = typeof themes[number]['id'];
 const navLinks = ['Home', 'About', 'Projects', 'Experience', 'Skills', 'Contact'];
 const skillIcons = [Layers3, Code2, Activity, BriefcaseBusiness, BrainCircuit, Terminal];
 
-function Reveal({ children, className = '', delay = 0, id }: { children: ReactNode; className?: string; delay?: number; id?: string }) {
-  return <motion.div id={id} className={className} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-30px' }} transition={{ duration: 0.55, delay }}>{children}</motion.div>;
+function Reveal({ children, className = '', id }: { children: ReactNode; className?: string; delay?: number; id?: string }) {
+  return <div id={id} className={className}>{children}</div>;
 }
 function Heading({ label, title, description }: { label: string; title: string; description?: string }) {
   return <div className="section-heading"><span className="eyebrow"><Sparkles size={13} />{label}</span><h2>{title}</h2>{description && <p>{description}</p>}</div>;
@@ -63,7 +62,7 @@ export default function Home() {
   }, [themeOpen]);
   const chooseTheme = (value: Theme) => { setTheme(value); try { localStorage.setItem('adarsh-portfolio-theme', value); } catch { /* The theme works without storage. */ } };
   const copyEmail = async () => { try { await navigator.clipboard.writeText(profile.contact.email); setCopied(true); copyTimer.current = setTimeout(() => setCopied(false), 2500); } catch { window.location.href = `mailto:${profile.contact.email}`; } };
-  return <MotionConfig reducedMotion="user"><div className="portfolio" data-theme={theme}>
+  return <div className="portfolio" data-theme={theme}>
     <a className="skip-link" href="#about">Skip to content</a>
     <header className="site-header"><div className="shell header-inner">
       <a href="#home" className="brand" aria-label="Adarsh Kadam home"><span className="brand-mark">AK<span>.</span></span><span>Adarsh Kadam</span></a>
@@ -73,14 +72,14 @@ export default function Home() {
     </div></header>
     <main id="portfolio-content">
       <section id="home" className="hero">
-        {(theme === 'moonlight' || theme === 'scenic') && <div className="hero-art" key={theme}><Image src={theme === 'moonlight' ? '/art/moon-hero.webp' : '/art/scenic-hero.webp'} alt="" fill priority sizes="100vw" className="hero-background" /><div className="hero-shade" /></div>}
-        <div className="shell hero-inner"><motion.div className="hero-copy" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        {(theme === 'moonlight' || theme === 'scenic') && <div className="hero-art" key={theme}><Image src={theme === 'moonlight' ? '/art/moon-hero.webp' : '/art/scenic-hero.webp'} alt="" fill preload sizes="100vw" className="hero-background" /><div className="hero-shade" /></div>}
+        <div className="shell hero-inner"><div className="hero-copy">
           <span className="hello"><span className="status-dot" />Hey, I’m Adarsh</span><p className="hero-kicker">A CURIOUS MIND. A BUILDER AT HEART.</p>
           <h1>Adarsh <span>Kadam</span></h1><p className="hero-role">AI/ML Engineer <span>/</span> GenAI Builder <span>/</span> Full-Stack Enthusiast</p><p className="hero-description">I build AI-powered, real-world solutions at the intersection of machine learning, generative AI, and web development.</p>
           <div className="hero-buttons"><a href="#projects" className="button primary">Explore my work<ArrowUpRight size={17} /></a><a href={profile.contact.github} target="_blank" rel="noopener noreferrer" className="button secondary"><Github size={17} />GitHub<ExternalLink size={12} /></a></div>
           <div className="hero-socials"><a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><Linkedin size={19} /></a><a href={profile.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><Github size={19} /></a><a href={`mailto:${profile.contact.email}`} aria-label="Email Adarsh"><Mail size={19} /></a><span className="social-divider" /><span>Let’s build something meaningful.</span></div>
-        </motion.div>
-        {theme === 'minimal' && <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="minimal-portrait"><Image src="/adarsh.png" alt="Adarsh Kadam" fill sizes="(min-width: 900px) 420px, 80vw" priority /><span className="portrait-caption"><Sparkles size={17} />Human curiosity. Artificial intelligence.</span></motion.div>}
+        </div>
+        {theme === 'minimal' && <div className="minimal-portrait"><Image src="/adarsh.png" alt="Adarsh Kadam" fill sizes="(max-width: 560px) 1px, (min-width: 900px) 420px, 40vw" loading="eager" fetchPriority="high" /><span className="portrait-caption"><Sparkles size={17} />Human curiosity. Artificial intelligence.</span></div>}
         {theme === 'terminal' && <div className="terminal-window"><div className="terminal-bar"><span /><span /><span /><p>adarsh@portfolio: ~</p></div><div className="terminal-code"><p><span>$</span> whoami</p><p>Adarsh Kadam</p><br /><p><span>$</span> cat profile.json</p><pre>{JSON.stringify({ role: 'AI Engineer', focus: ['Generative AI', 'Agentic AI', 'RAG'], mindset: 'Always building. Always learning.', status: 'Open to collaboration' }, null, 2)}</pre><br /><p><span>$</span> let’s build something<span className="terminal-cursor">_</span></p></div></div>}
         </div><a href="#about" className="scroll-cue"><span>SCROLL TO EXPLORE</span><ArrowDown size={15} /></a><span className="hero-edition">PORTFOLIO / 2026</span>
       </section>
@@ -93,5 +92,5 @@ export default function Home() {
       <section className="shell section themes-section" id="themes"><Reveal><Heading label="Make yourself at home" title="One portfolio. Four different worlds." description="Choose a mood. The entire experience changes with you." /></Reveal><div className="theme-gallery">{themes.map((t) => <button key={t.id} onClick={() => chooseTheme(t.id)} aria-pressed={theme === t.id} className={`theme-card ${theme === t.id ? 'selected' : ''}`}><div className={`theme-thumb thumb-${t.id}`}>{t.image ? <Image src={t.image} alt="" fill sizes="(min-width: 900px) 270px, 50vw" /> : <div className="mini-terminal"><Terminal size={30} /><span>$ hello, world<span className="terminal-cursor">_</span></span></div>}<span className="theme-selected"><Check size={15} /></span></div><div className="theme-card-label"><t.icon size={17} /><strong>{t.name}</strong><span>{t.label}</span></div><p>{t.description}</p></button>)}</div><p className="theme-note" role="status"><Check size={13} />{themes.find((t) => t.id === theme)?.name} theme selected.</p></section>
       <section className="section contact-section" id="contact"><div className="shell contact-grid"><Reveal><span className="eyebrow"><span className="status-dot" />Open to conversations</span><h2>Great things start<br />with a <span>hello.</span></h2><p>Have an idea, an interesting challenge, or just want to talk about AI? I’d love to hear from you.</p><a href={`mailto:${profile.contact.email}`} className="button primary">Let’s build something<ArrowUpRight size={17} /></a><div className="email-row"><a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a><button className="icon-button" onClick={copyEmail} aria-label={copied ? 'Email copied' : 'Copy email address'}>{copied ? <Check size={16} /> : <Copy size={16} />}</button><span className="copy-status" role="status">{copied ? 'Copied!' : ''}</span></div><div className="contact-socials"><a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={17} />LinkedIn<ArrowUpRight size={13} /></a><a href={profile.contact.github} target="_blank" rel="noopener noreferrer"><Github size={17} />GitHub<ArrowUpRight size={13} /></a></div></Reveal><Reveal><Assistant /></Reveal></div></section>
     </main><footer className="shell footer"><a href="#home" className="brand"><span className="brand-mark">AK<span>.</span></span><span>Thoughtfully built. Always evolving.</span></a><p>© 2026 Adarsh Kadam</p><a href="#home" className="text-link">Back to top<ArrowUpRight size={14} /></a></footer>
-  </div></MotionConfig>;
+  </div>;
 }
