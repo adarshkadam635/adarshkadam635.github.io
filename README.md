@@ -56,7 +56,7 @@ components/
 data/
   portfolio.ts        All profile, experience, project & skills content
 public/
-  profile.png, resume.pdf, favicon.svg, ...
+  profile.png, Adarsh_Kadam_Resume.docx, favicon.svg, ...
 ```
 
 ## Getting Started
