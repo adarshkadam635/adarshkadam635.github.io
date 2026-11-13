@@ -56,34 +56,30 @@ export const capabilities = [
 
 export const experiences = [
   {
-    role: 'AI Engineer',
-    company: 'EndorseCC',
-    location: 'India',
-    period: 'June 2026 – Present',
+    role: 'Junior AI Full Stack Developer',
+    company: 'SinkIn IT Solutions',
+    location: 'Indore, Madhya Pradesh, India · Remote',
+    employmentType: 'Full-time',
+    period: 'November 2025 – Present',
     bullets: [
-      'Engineered and integrated AI/ML solutions using OpenAI, Gemini, and Anthropic models.',
-      'Developed LLM-powered applications and AI agents for business automation and intelligent workflows.',
-      'Implemented Prompt Engineering, NLP pipelines, RAG systems, and knowledge-based AI solutions.',
-      'Worked on dataset processing, model evaluation, optimization, and AI response quality improvement.',
-      'Collaborated with engineering and business teams to integrate AI capabilities into real-world products.'
+      'Develop AI-powered web applications, connecting user interfaces with Python backends and PostgreSQL databases.',
+      'Integrate AI capabilities and backend APIs to support practical application workflows.',
+      'Collaborate with the development team to test, debug, and improve full-stack features.'
     ],
-    tech: ['Python', 'LLMs', 'OpenAI', 'Gemini', 'Anthropic', 'RAG', 'NLP', 'Prompt Engineering', 'AI Agents', 'APIs', 'Git']
+    tech: ['Python', 'PostgreSQL', 'AI Integration', 'API Development', 'Full Stack Development']
   },
   {
-    role: 'AI Engineer — Agentic AI & Automation',
-    company: 'Freelancer.com & Fiverr.com',
-    location: 'Remote',
-    period: 'December 2024 – Present',
+    role: 'AI Full Stack Developer Intern',
+    company: 'SinkIn IT Solutions',
+    location: 'Indore, Madhya Pradesh, India · Remote',
+    employmentType: 'Internship',
+    period: 'June 2025 – November 2025',
     bullets: [
-      'Designed and deployed autonomous AI agents using OpenAI and Claude APIs.',
-      'Built lead-generation and automated customer-support agents.',
-      'Reduced manual operational workload by 40%.',
-      'Engineered production-ready RAG pipelines using LangChain and Pinecone.',
-      'Built scalable FastAPI backends integrating AI agents with external platforms such as CRMs and Slack.',
-      'Implemented tool calling and multi-step reasoning chains.',
-      'Enabled agents to autonomously complete complex business workflows.'
+      'Supported the development of AI-enabled web applications while building practical full-stack development skills.',
+      'Created responsive web interfaces with HTML5 and CSS, and helped connect frontend features with backend services.',
+      'Assisted with testing, debugging, and feature improvements alongside the development team.'
     ],
-    tech: ['OpenAI', 'Claude', 'LangChain', 'Pinecone', 'FastAPI', 'CRMs', 'Slack', 'Tool Calling', 'Multi-step Reasoning']
+    tech: ['HTML5', 'CSS', 'Responsive Design', 'AI Integration', 'Full Stack Development']
   }
 ];
 
